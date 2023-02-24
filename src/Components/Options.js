@@ -40,6 +40,8 @@ const OptionsOther = (props) => {
         <Col>
           <SizeOption display={props.display} handleChange={props.handleChange} />
         </Col>
+      </Row>
+      <Row>
         <Col>
           <ColorOption display={props.display} pick='color' color={props.color} handleChange={props.handleChange} />
         </Col>

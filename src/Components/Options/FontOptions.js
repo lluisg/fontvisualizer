@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 
 const FontOption = (props) => {
   return(
-    <div>
+    <div className='container-option container-font container-btn'>
       <Form.Label className='label-option'>Font</Form.Label>
       <Form.Select className='input-option' onChange={(e)=>props.handleChange(props.display, 'Font', e.target.value)}>
         <option value="Arial">Arial</option>

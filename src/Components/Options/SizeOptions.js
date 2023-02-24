@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 
 const SizeOption = (props) => {
   return(
-    <div>
+    <div className='container-option container-size container-btn'>
       <Form.Label className='label-option'>Size</Form.Label>
       <Form.Select className='input-option' onChange={(e)=>props.handleChange(props.display, 'Size', e.target.value)}>
         <option value={10}>10</option>
@@ -13,7 +13,6 @@ const SizeOption = (props) => {
         <option value={40}>40</option>
         <option value={50}>50</option>
         <option value={60}>60</option>
-        <option value={10}>10</option>
       </Form.Select>
     </div>
   )

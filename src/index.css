@@ -1,6 +1,9 @@
 /* Code by Lluis Guardia */
 
 :root{
+  --bg-general: white;
+  --bg-options: lightcyan  ;
+  --bg-btns: antiquewhite;
 }
 
 *, *::after, *::before {
@@ -37,33 +40,109 @@ main{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: red;
+  background-color: var(--bg-general);
 }
 
 /* ------------------------ OPTIONS ------------------------ */
-.container-options{
+
+#container-top{
   width: 100%;
-  background-color: lightcyan;
-  padding: 10px;
+  background-color: var(--bg-options);
+  border: 1px solid black;
+  box-shadow: 3px 3px 10px black;
+}
+
+#container1, #container2{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container-options{
+  width:fit-content;
+  background-color: var(--bg-options);
+  border: 1px solid black;
+  box-shadow: 3px 3px 10px black;
+}
+
+.row-options{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.container-option{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  background-color: var(--bg-btns);
+}
+
+.container-text{
+  width: 80%;
+  max-width: 600px;
+}
+
+.container-display{
+  width: 20%;
+  max-width: 100px;
+}
+
+.container-extra{
+  width: 100%;
+}
+
+.container-btn{
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 2px;
+  box-shadow: 2px 2px 5px;
 }
 
 .label-option{
+  margin: 5px 0;
+  font-weight: bold;
 }
 
 .input-option{
+  background-color: rebeccapurple;
 }
 
-.input-color{
-  padding: 10px;
+/* ---- color rectangle popup ---- */
+.picker {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
+
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-color: lightcyan;
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  border-radius: 9px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 
 /* ------------------------ VISUALIZER ------------------------ */
-.container-displayer{
-  background-color: lightblue;
+.container-previewer{
   width: 100%;
-  flex-grow: 1;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -77,7 +156,7 @@ main{
   justify-content: center;
   align-items: center;
   margin: 10px;
-  box-shadow: 5px 10px 30px 2px black;
+  box-shadow: 2px 2px 5px;
 }
 
 .previewer-text{
@@ -89,6 +168,6 @@ main{
   color:inherit;
 }
 
-.hide-options, .hide-preview{
-  display: none;
+.hide-options, .hide-preview, .hide-display{
+  display: none !important;
 }
