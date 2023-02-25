@@ -2,18 +2,21 @@ import Form from 'react-bootstrap/Form';
 
 const SizeOption = (props) => {
   return(
-    <div className='container-option container-size container-btn'>
-      <Form.Label className='label-option'>Size</Form.Label>
-      <Form.Select className='input-option' onChange={(e)=>props.handleChange(props.display, 'Size', e.target.value)}>
-        <option value={10}>10</option>
-        <option value={15}>15</option>
-        <option value={20}>20</option>
-        <option value={25}>25</option>
-        <option value={30}>30</option>
-        <option value={40}>40</option>
-        <option value={50}>50</option>
-        <option value={60}>60</option>
-      </Form.Select>
+    <div id='container-size' className='container-option'>
+      <div className='btn-size'>
+        <Form.Label className='label-option'>Size</Form.Label>
+        <Form.Select onChange={(e)=>props.handleChange(props.display, 'size', e.target.value)}>
+          <option value={10}>10</option>
+          <option value={20}>20</option>
+          <option value={30}>30</option>
+          <option value={40}>40</option>
+          <option value={50}>50</option>
+          <option value={60}>60</option>
+          <option value={70}>70</option>
+          <option value={80}>80</option>
+          <option value={90}>90</option>
+        </Form.Select>
+      </div>
     </div>
   )
 }

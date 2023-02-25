@@ -1,28 +1,39 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import Options from "./Options"
 import OptionsOther from "./OptionsOther"
 import OptionsTop from "./OptionsTop"
 import Displayer from "./Displayer"
 
+import Fonts from "./data/fonts"
 
 class FontVisualizer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       text: 'Sample text',
-
-      font: 'Arial',
-      size: '10',
-      color: '#00043e',
-      bgcolor: '#c1fffb',
-      underline: false,
-
-      font2: 'Arial',
-      size2: '10',
-      color2: '#ffc62a',
-      bgcolor2: '#0600a8',
-      underline2: false,
+      display1: {
+        font: 'Arial',
+        size: '40',
+        color: '#00043e',
+        bgcolor: '#c1fffb',
+        underline: false,  
+        bold: false,
+        cursive: false,
+        uppercase: false,
+        border: false,
+        bordercolor: '#160040',
+      },
+      display2: {
+        font: 'Arial',
+        size: '40',
+        color: '#ffc62a',
+        bgcolor: '#0600a8',
+        underline: false,  
+        bold: false,
+        cursive: false,
+        border: false,
+        bordercolor: '#160040',
+      },
     }
 
     this.ChangeText = this.ChangeText.bind(this);
@@ -31,24 +42,52 @@ class FontVisualizer extends React.Component {
   }
 
   UpdateValues(){
-    let previewer = document.getElementById('previewer1');
-    previewer.style.color = this.state.color;
-    previewer.style.backgroundColor = this.state.bgcolor;
+    // Updating the characteristics of the text and elements
+    ['1', '2'].map(i =>{
+      let disp_val = 'display'+i
+      // changes on the previewer element
+      let previewer = document.getElementById('previewer'+i);
+      previewer.style.color = this.state[disp_val].color
+      previewer.style.backgroundColor = this.state[disp_val].bgcolor;
+  
+      // changes on the text itself
+      let text = document.getElementById('previewer-text'+i);
+ 
+      this.state[disp_val].uppercase
+        ? text.innerHTML = this.state.text.toUpperCase()
+        : text.innerHTML = this.state.text
+  
+      // text.style.fontFamily = Fonts[this.state[disp_val].font]
+      text.style.fontFamily = this.state[disp_val].font + ' sans-serif serif'
+      text.style.fontSize = this.state[disp_val].size + 'px'
+  
+      this.state[disp_val].underline 
+        ? text.style.textDecoration = 'underline'
+        : text.style.textDecoration = 'none'
 
-    let text = document.getElementById('previewer-text1');
-    text.innerHTML = this.state.text;
-    text.style.fontSize = this.state.size+'px';
-    this.state.underline 
-      ? text.style.textDecoration = 'underline'
-      : text.style.textDecoration = 'none'
+      this.state[disp_val].bold 
+        ? text.style.fontWeight = 'bold'
+        : text.style.fontWeight = '100'
 
-    let previewer2 = document.getElementById('previewer2');
-    previewer2.style.color = this.state.color2;
-    previewer2.style.backgroundColor = this.state.bgcolor2;
+      this.state[disp_val].cursive 
+        ? text.style.fontStyle = 'italic'
+        : text.style.fontStyle = 'normal'
 
-    let text2 = document.getElementById('previewer-text2');
-    text2.innerHTML = this.state.text;
-    text2.style.fontSize = this.state.size2+'px';
+      if('webkitTextStroke' in text.style){
+        this.state[disp_val].border_black
+          ? text.style.webkitTextStroke  = '2px black'
+          : text.style.webkitTextStroke = 'transparent'
+
+        if(this.state[disp_val].border){
+          text.style.webkitTextStroke  = '2px '+this.state[disp_val].bordercolor
+        }else{
+          text.style.webkitTextStroke = 'transparent'
+        }
+      }else{
+          alert ("Your browser doesn't support this case");
+      }    
+
+    })
   }
 
   ChangeText(value){
@@ -72,34 +111,28 @@ class FontVisualizer extends React.Component {
   ChangeParameter(display, name, value){
     console.log('change:', name, '('+display+')', value)
 
-    let [size, font, color, bgcolor, underline] = [this.state.size, this.state.font, this.state.color, this.state.bgcolor, this.state.underline];
-    if(display=='2'){
-      [size, font, color, bgcolor, underline] = [this.state.size2, this.state.font2, this.state.color2, this.state.bgcolor2, this.state.underline];
+    let display_state = this.state.display1
+    if (display == '2'){
+      display_state = this.state.display2
     }
 
-    if (name == 'Size'){ size = value }
-    else if(name == 'Font'){ font = value}
-    else if(name == 'Color'){ color = value}
-    else if(name == 'Background'){ bgcolor = value}
-    else if(name == 'underline') {underline = !underline}
+    let variables = Object.keys(display_state)
+    variables.map((var_name, index) => {
+      if(name == var_name){
+        if (typeof display_state[var_name] == 'boolean'){
+          display_state[var_name] = !display_state[var_name]
+        }else{
+          display_state[var_name] = value
+        }
+      }
+    });
 
-    if(display==1){
-      this.setState({
-        size: size,
-        font: font,
-        color: color,
-        bgcolor: bgcolor,
-        underline: underline,
-      })
+    if(display=='1'){
+      this.setState({ display1: display_state})
     }else{
-      this.setState({
-        size2: size,
-        font2: font,
-        color2: color,
-        bgcolor2: bgcolor,
-        underline2: underline,
-      })
+      this.setState({ display2: display_state})
     }
+
   }
 
   componentDidMount(){
@@ -120,18 +153,18 @@ class FontVisualizer extends React.Component {
           <OptionsOther id='form-options1'
                         display='1'
                         handleChange={this.ChangeParameter} 
-                        color={this.state.color}
-                        bgcolor={this.state.bgcolor} />
+                        color={this.state.display1.color}
+                        bgcolor={this.state.display1.bgcolor}
+                        bordercolor={this.state.display1.bordercolor} />
           <Displayer text={this.state.text} display='1' />
         </div>
-        add exta options with points: underline, line on the border, .... <br/>
-        consider adding at the state two dictionaries, one for each displayer <br/>
         <div id='container2' className='hide-display'>
           <OptionsOther id='form-options2'
                         display='2'
                         handleChange={this.ChangeParameter} 
-                        color={this.state.color2}
-                        bgcolor={this.state.bgcolor2} />
+                        color={this.state.display2.color}
+                        bgcolor={this.state.display2.bgcolor}
+                        bordercolor={this.state.display2.bordercolor} />
           <Displayer text={this.state.text} display='2' />
         </div>
       </main>

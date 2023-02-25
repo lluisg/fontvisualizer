@@ -1,6 +1,7 @@
 import SizeOption from './Options/SizeOptions'
 import FontOption from './Options/FontOptions'
 import ColorOption from './Options/ColorOptions'
+import BackgroundOption from './Options/BackgroundOptions'
 import ExtraOption from './Options/ExtraOptions'
 
 const OptionsOther = (props) => {
@@ -11,11 +12,11 @@ const OptionsOther = (props) => {
         <SizeOption display={props.display} handleChange={props.handleChange} />
       </div>
       <div className='row-options'>
-        <ColorOption display={props.display} pick='color' color={props.color} handleChange={props.handleChange} />
-        <ColorOption display={props.display} pick='bgcolor' color={props.bgcolor} handleChange={props.handleChange} />
+        <ColorOption display={props.display} color={props.color} handleChange={props.handleChange} />
+        <BackgroundOption display={props.display} color={props.bgcolor} handleChange={props.handleChange} />
       </div>
       <div className='row-options'>
-        <ExtraOption display={props.display} handleChange={props.handleChange} />
+        <ExtraOption display={props.display} color={props.bordercolor} handleChange={props.handleChange} />
       </div>
     </div>
   )

@@ -61,7 +61,9 @@ main{
 }
 
 .container-options{
-  width:fit-content;
+  width: 20%;
+  max-width: 200px;
+  min-width: 130px;
   background-color: var(--bg-options);
   border: 1px solid black;
   box-shadow: 3px 3px 10px black;
@@ -74,34 +76,31 @@ main{
 }
 
 .container-option{
+  width: 50%;
+  margin: 5px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  text-align: center;
   background-color: var(--bg-btns);
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px;
 }
 
-.container-text{
+#container-text{
   width: 80%;
   max-width: 600px;
 }
 
-.container-display{
+#container-display{
   width: 20%;
   max-width: 100px;
 }
 
-.container-extra{
+#container-extra{
   width: 100%;
-}
-
-.container-btn{
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 5px;
-  padding: 2px;
-  box-shadow: 2px 2px 5px;
 }
 
 .label-option{
@@ -109,10 +108,21 @@ main{
   font-weight: bold;
 }
 
-.input-option{
-  background-color: rebeccapurple;
+.border-option{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
+.btn-text{
+  width: 95%;
+  max-width: 500px;
+}
+
+.input-text{
+  text-align: center;
+}
 /* ---- color rectangle popup ---- */
 .picker {
   position: relative;
@@ -156,12 +166,13 @@ main{
   justify-content: center;
   align-items: center;
   margin: 10px;
-  box-shadow: 2px 2px 5px;
+  box-shadow: 2px 2px 5px black;
 }
 
 .previewer-text{
   text-decoration: none;
   color: inherit;
+  text-align: center;
 }
 
 .previewer-text:hover{
