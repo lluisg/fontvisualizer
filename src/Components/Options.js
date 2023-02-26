@@ -1,12 +1,16 @@
+import TextOption from './Options/TextOptions'
 import SizeOption from './Options/SizeOptions'
 import FontOption from './Options/FontOptions'
 import ColorOption from './Options/ColorOptions'
 import BackgroundOption from './Options/BackgroundOptions'
 import ExtraOption from './Options/ExtraOptions'
 
-const OptionsOther = (props) => {
+const Options = (props) => {
   return(
     <div className='container-options'>
+      <div className='row-options'>
+        <TextOption display={props.display} handleChange={props.handleChange} />
+      </div>
       <div className='row-options'>
         <FontOption display={props.display} handleChange={props.handleChange} />
         <SizeOption display={props.display} handleChange={props.handleChange} />
@@ -22,4 +26,4 @@ const OptionsOther = (props) => {
   )
 }
 
-export default OptionsOther;
+export default Options;

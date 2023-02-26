@@ -1,7 +1,7 @@
 import Form from 'react-bootstrap/Form';
+import fonts from '../data/fonts'
 
 const FontOption = (props) => {
-  let fonts = ['Arial', 'Verdana', 'Tahoma', 'Trebuchet MS', 'Times New Roman', 'Georgia', 'Garamond', 'Courier New', 'Brush Script MT']
   let fontsC = []
   fonts.map(font => {
     let font_clean = font.replaceAll(/\s/g,'')
@@ -16,7 +16,7 @@ const FontOption = (props) => {
           {
             fonts.map((font, index) => {
               let font_clean = fontsC[index]
-              return (<option id={font_clean} value={font}>{font}</option>)
+              return (<option key={font_clean} style={{fontFamily: font}} id={font_clean} value={font}>{font}</option>)
             })
           }
         </Form.Select>

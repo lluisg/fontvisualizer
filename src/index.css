@@ -2,9 +2,12 @@
 
 :root{
   --bg-general: white;
+  --bg-banner: orange;
   --bg-options: lightcyan  ;
   --bg-btns: antiquewhite;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -43,16 +46,21 @@ main{
   background-color: var(--bg-general);
 }
 
-/* ------------------------ OPTIONS ------------------------ */
+/* ------------------------ BANNER ------------------------ */
 
-#container-top{
+nav{
   width: 100%;
-  background-color: var(--bg-options);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: var(--bg-banner);
   border: 1px solid black;
-  box-shadow: 3px 3px 10px black;
+  margin-bottom: 5px;
 }
 
-#container1, #container2{
+/* ------------------------ OPTIONS ------------------------ */
+
+#container-top, #container-bottom{
   width: 100%;
   height: auto;
   display: flex;
@@ -73,6 +81,12 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border: 2px solid purple;
+}
+
+.row-top{
+  justify-content: center;
+  width: 100%;
 }
 
 .container-option{
@@ -123,6 +137,12 @@ main{
 .input-text{
   text-align: center;
 }
+
+.checkbox-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 /* ---- color rectangle popup ---- */
 .picker {
   position: relative;
@@ -150,9 +170,11 @@ main{
 
 
 /* ------------------------ VISUALIZER ------------------------ */
+
 .container-previewer{
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -160,22 +182,24 @@ main{
 .previewer{
   width: 90%;
   height: 90%;
-  border: 2px solid black;
   min-height: 300px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: left;
   align-items: center;
   margin: 10px;
+  border: 2px solid black;
   box-shadow: 2px 2px 5px black;
 }
 
-.previewer-text{
+.previewer-text, .previewer-title{
   text-decoration: none;
   color: inherit;
-  text-align: center;
+  margin: 5px;
+  border: 2px solid purple;
 }
 
-.previewer-text:hover{
+.previewer-text:hover, .previewer-title:hover{
   color:inherit;
 }
 
