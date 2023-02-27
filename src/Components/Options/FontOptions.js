@@ -12,7 +12,7 @@ const FontOption = (props) => {
     <div id='container-font' className='container-option'>
       <div className='btn-font'>
         <Form.Label className='label-option'>Font</Form.Label>
-        <Form.Select onChange={(e)=>props.handleChange(props.display, 'font', e.target.value)}>
+        <Form.Select onChange={(e)=>props.handleChange(props.display, 'font', e.target.value)} value={props.font}>
           {
             fonts.map((font, index) => {
               let font_clean = fontsC[index]

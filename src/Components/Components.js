@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import sanitizeHtml from "sanitize-html"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 import Banner from "./Banner"
 import Options from "./Options"
@@ -17,7 +21,7 @@ class FontVisualizer extends React.Component {
       background_bottom: '#0600a8', 
 
       top_title: {
-        font: 'Arial',
+        font: 'Verdana',
         size: '40',
         color: '#00043e',
         underline: false,  
@@ -25,10 +29,11 @@ class FontVisualizer extends React.Component {
         cursive: false,
         uppercase: false,
         border: false,
+        centered: false,
         bordercolor: '#160040',
       },
       top_text: {
-        font: 'Arial',
+        font: 'Tahoma',
         size: '12',
         color: '#000000',
         underline: false,  
@@ -36,6 +41,7 @@ class FontVisualizer extends React.Component {
         cursive: false,
         uppercase: false,
         border: false,
+        centered: false,
         bordercolor: '#ffffff',
       },
 
@@ -48,6 +54,7 @@ class FontVisualizer extends React.Component {
         cursive: false,
         uppercase: false,
         border: false,
+        centered: false,
         bordercolor: '#160040',
       },
       bottom_text: {
@@ -59,28 +66,34 @@ class FontVisualizer extends React.Component {
         cursive: false,
         uppercase: false,
         border: false,
+        centered: false,
         bordercolor: '#160040',
       },
     }
 
+    this.ChangeParameterText = this.ChangeParameterText.bind(this);
+    this.CopyParameters = this.CopyParameters.bind(this);
     this.ChangeText = this.ChangeText.bind(this);
     this.ChangeDisplay = this.ChangeDisplay.bind(this);
-    this.ChangeParameter = this.ChangeParameter.bind(this);
+    this.ChangeCurrentText = this.ChangeCurrentText.bind(this);
+    this.ChangeBackgroundColor = this.ChangeBackgroundColor.bind(this);
   }
 
   UpdateValues(){
     // Updating the characteristics of the text and elements
+    console.log('updating');
     ['top', 'bottom'].map(position =>{
       ['title', 'text'].map(line => {
         let disp_val = position+'_'+line
+        let back_val = 'background_'+position
 
         // changes on the previewer element
         let previewer = document.getElementById('previewer-'+position);
-        previewer.style.color = this.state[disp_val].color
-        previewer.style.backgroundColor = this.state[disp_val].bgcolor;
-    
+        previewer.style.backgroundColor = this.state[back_val];
+
         // changes on the text itself
         let text = document.getElementById('previewer-'+line+'-'+position);
+        text.style.color = this.state[disp_val].color
         
         this.state[disp_val].uppercase
           ? text.innerHTML = this.state[line].toUpperCase()
@@ -100,6 +113,10 @@ class FontVisualizer extends React.Component {
         this.state[disp_val].cursive 
           ? text.style.fontStyle = 'italic'
           : text.style.fontStyle = 'normal'
+
+          this.state[disp_val].centered 
+          ? text.style.textAlign = 'center'
+          : text.style.textAlign = 'left'
   
         if('webkitTextStroke' in text.style){
           this.state[disp_val].border_black
@@ -119,28 +136,58 @@ class FontVisualizer extends React.Component {
     })
   }
 
+  Sanitize(text){
+    const sanitizeConf = {
+			allowedTags: ["b", "i", "a", "p"],
+			allowedAttributes: { a: ["href"] }
+		};
+		return sanitizeHtml(text, sanitizeConf)
+  }
+
   ChangeText(which, value){
     console.log('change', which, ':', value)
     if (which == 'title'){
-      this.setState({ title: value })
+      this.setState({ title: this.Sanitize(value) })
     }else{
-      this.setState({ text: value })
+      this.setState({ text: this.Sanitize(value) })
     }
+  }
+
+  ChangeCurrentText(which, value){
+    console.log('change current', which, ':', value)
+    if(which == 'top'){
+      this.setState({ current_top: value })
+    }else{
+      this.setState({ current_bottom: value })
+    }
+  }
+
+  ChangeBackgroundColor(which, name, value){
+    console.log('change background color', which, ':', value)
+    if(which == 'top'){
+      this.setState({ background_top: value })
+    }else{
+      this.setState({ background_bottom: value })
+    }
+
   }
 
   ChangeDisplay(value){
     console.log('change display:', value)
 
-    let el = document.getElementById('container-bottom')
+    let display2 = document.getElementById('container-bottom')
+    let btncopy = document.getElementById('container-copy')
     if(value == '1'){
-      el.classList.add('hide-display')
+      display2.classList.add('hide-display')
+      btncopy.classList.add('hide-display')
     }else{
-      el.classList.remove('hide-display')
+      display2.classList.remove('hide-display')
+      btncopy.classList.remove('hide-display')
     }
   }
 
-  ChangeParameter(display, name, value){
-    console.log('change in', this.state['current_'+display], ':' , name, value)
+  ChangeParameterText(display, name, value){
+    console.log('change in', this.state['current_'+display], '('+display+') :' , name, value)
 
     let curr = this.state['current_'+display]
     let name_dsp = display+'_'+curr
@@ -168,6 +215,18 @@ class FontVisualizer extends React.Component {
     }
   }
 
+  CopyParameters(){
+    this.setState((prevState)=>{
+      return{
+        ...prevState,
+        background_bottom: prevState.background_top,
+        bottom_title: prevState.top_title,
+        bottom_text: prevState.top_text,
+      }
+    });
+
+  }
+
   componentDidMount(){
     this.UpdateValues()
   }
@@ -181,24 +240,49 @@ class FontVisualizer extends React.Component {
     let dsp_bottom = 'bottom_'+this.state.current_bottom
     return (
       <main>
-        <Banner />
+        <Banner handleChangeDisplay={this.ChangeDisplay} />
         <div id='container-top'>
           <Options id='form-options-top'
                 display='top'
-                handleChange={this.ChangeParameter} 
+                handleChange={this.ChangeParameterText} 
+                handleChangeCurrent={this.ChangeCurrentText} 
+                handleChangeBackground={this.ChangeBackgroundColor} 
                 color={this.state[dsp_top].color}
-                bgcolor={this.state[dsp_top].bgcolor}
-                bordercolor={this.state[dsp_top].bordercolor} />
+                bgcolor={this.state.background_top}
+                bordercolor={this.state[dsp_top].bordercolor} 
+                size={this.state[dsp_top].size}
+                font={this.state[dsp_top].font}
+                underline={this.state[dsp_top].underline}
+                bold={this.state[dsp_top].bold}
+                cursive={this.state[dsp_top].cursive}
+                uppercase={this.state[dsp_top].uppercase}
+                border={this.state[dsp_top].border}
+                centered={this.state[dsp_top].centered}
+                />
           <Displayer title={this.state.title} text={this.state.text} display='top' handleChangeText={this.ChangeText} />
+        </div>
+        <div id='container-copy' className='hide-display'>
+          <div className='btn-copy' onClick={this.CopyParameters}>Copy Format <FontAwesomeIcon icon={faArrowDown} /></div>
         </div>
         <div id='container-bottom' className='hide-display'>
           <Options id='form-options_bottom'
                         display='bottom'
-                        handleChange={this.ChangeParameter} 
+                        handleChange={this.ChangeParameterText} 
+                        handleChangeCurrent={this.ChangeCurrentText} 
+                        handleChangeBackground={this.ChangeBackgroundColor} 
                         color={this.state[dsp_bottom].color}
-                        bgcolor={this.state[dsp_bottom].bgcolor}
-                        bordercolor={this.state[dsp_bottom].bordercolor} />
-          <Displayer display='bottom' handleChangeText={this.ChangeText} />
+                        bgcolor={this.state.background_bottom}
+                        bordercolor={this.state[dsp_bottom].bordercolor}
+                        size={this.state[dsp_bottom].size}
+                        font={this.state[dsp_bottom].font}
+                        underline={this.state[dsp_bottom].underline}
+                        bold={this.state[dsp_bottom].bold}
+                        cursive={this.state[dsp_bottom].cursive}
+                        uppercase={this.state[dsp_bottom].uppercase}
+                        border={this.state[dsp_bottom].border}
+                        centered={this.state[dsp_bottom].centered}
+                        />
+          <Displayer title={this.state.title} text={this.state.text} display='bottom' handleChangeText={this.ChangeText} />
         </div>
       </main>
     );

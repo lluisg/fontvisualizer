@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import ContentEditable from 'react-contenteditable';
 
 const Displayer = (props) => {
   let editable
@@ -7,18 +8,17 @@ const Displayer = (props) => {
   return (
     <div className="container-previewer">
       <div id={"previewer-"+props.display} className='previewer'>
-        <div  id={"previewer-title-"+props.display} 
-              className='previewer-title' 
-              contentEditable={editable} 
-              suppressContentEditableWarning={true}>
-                {props.title}
+        <div id={"previewer2-"+props.display}>
+          <ContentEditable  id={"previewer-title-"+props.display} 
+                            className='previewer-title' 
+                            onBlur={(e) => props.handleChangeText('title', e.target.innerHTML)} 
+                            html={props.title} />
         </div>
-        <div  id={"previewer-text-"+props.display} 
-              className='previewer-text' 
-              contentEditable={editable} 
-              suppressContentEditableWarning={true}>
-                {props.text}
-        </div>
+
+        <ContentEditable  id={"previewer-text-"+props.display} 
+                          className='previewer-text' 
+                          onBlur={(e) => props.handleChangeText('text', e.target.innerHTML)} 
+                          html={props.text} />
       </div>
     </div>
     );

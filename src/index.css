@@ -72,6 +72,7 @@ nav{
   width: 20%;
   max-width: 200px;
   min-width: 130px;
+  margin: 5px;
   background-color: var(--bg-options);
   border: 1px solid black;
   box-shadow: 3px 3px 10px black;
@@ -81,7 +82,6 @@ nav{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: 2px solid purple;
 }
 
 .row-top{
@@ -106,6 +106,9 @@ nav{
 #container-text{
   width: 80%;
   max-width: 600px;
+  background-color: inherit;
+  border: none;
+  box-shadow: none;
 }
 
 #container-display{
@@ -132,17 +135,31 @@ nav{
 .btn-text{
   width: 95%;
   max-width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .input-text{
   text-align: center;
 }
 
-.checkbox-row{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.checkbox-unique{
+  margin: 3px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
+
+.checkbox-unique:hover{
+  cursor: pointer;
+}
+
+.selected-unique{
+  background-color: var(--bg-btns);
+}
+
 /* ---- color rectangle popup ---- */
 .picker {
   position: relative;
@@ -169,6 +186,18 @@ nav{
 }
 
 
+/* ------------------------ BUTTON COPY FORMAT ------------------------ */
+.btn-copy{
+  width: 100px;
+  margin: 5px;
+  margin-left: 15px;
+  padding: 3px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
 /* ------------------------ VISUALIZER ------------------------ */
 
 .container-previewer{
@@ -186,7 +215,7 @@ nav{
   display: flex;
   flex-direction: column;
   justify-content: left;
-  align-items: center;
+  align-items: left;
   margin: 10px;
   border: 2px solid black;
   box-shadow: 2px 2px 5px black;
@@ -196,7 +225,7 @@ nav{
   text-decoration: none;
   color: inherit;
   margin: 5px;
-  border: 2px solid purple;
+  color: red
 }
 
 .previewer-text:hover, .previewer-title:hover{
@@ -205,4 +234,8 @@ nav{
 
 .hide-options, .hide-preview, .hide-display{
   display: none !important;
+}
+
+.previewer-title-top{
+  color:orange;
 }

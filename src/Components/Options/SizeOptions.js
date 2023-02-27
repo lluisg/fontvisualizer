@@ -5,7 +5,7 @@ const SizeOption = (props) => {
     <div id='container-size' className='container-option'>
       <div className='btn-size'>
         <Form.Label className='label-option'>Size</Form.Label>
-        <Form.Select onChange={(e)=>props.handleChange(props.display, 'size', e.target.value)}>
+        <Form.Select onChange={(e)=>props.handleChange(props.display, 'size', e.target.value)} value={props.size}>
           <option value={10}>10</option>
           <option value={20}>20</option>
           <option value={30}>30</option>

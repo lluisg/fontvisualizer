@@ -9,18 +9,27 @@ const Options = (props) => {
   return(
     <div className='container-options'>
       <div className='row-options'>
-        <TextOption display={props.display} handleChange={props.handleChange} />
+        <TextOption display={props.display} handleChangeCurrent={props.handleChangeCurrent} />
       </div>
       <div className='row-options'>
-        <FontOption display={props.display} handleChange={props.handleChange} />
-        <SizeOption display={props.display} handleChange={props.handleChange} />
+        <FontOption display={props.display} handleChange={props.handleChange} font={props.font} />
+        <SizeOption display={props.display} handleChange={props.handleChange} size={props.size} />
       </div>
       <div className='row-options'>
         <ColorOption display={props.display} color={props.color} handleChange={props.handleChange} />
-        <BackgroundOption display={props.display} color={props.bgcolor} handleChange={props.handleChange} />
+        <BackgroundOption display={props.display} color={props.bgcolor} handleChange={props.handleChangeBackground} />
       </div>
       <div className='row-options'>
-        <ExtraOption display={props.display} color={props.bordercolor} handleChange={props.handleChange} />
+        <ExtraOption   display={props.display} handleChange={props.handleChange} 
+                       color={props.bordercolor}
+                       underline={props.underline}
+                       bold={props.bold}
+                       cursive={props.cursive}
+                       uppercase={props.uppercase}
+                       centered={props.centered}
+                       border={props.border}
+               
+        />
       </div>
     </div>
   )
