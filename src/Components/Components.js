@@ -77,6 +77,7 @@ class FontVisualizer extends React.Component {
     this.ChangeDisplay = this.ChangeDisplay.bind(this);
     this.ChangeCurrentText = this.ChangeCurrentText.bind(this);
     this.ChangeBackgroundColor = this.ChangeBackgroundColor.bind(this);
+    this.HideOptions = this.HideOptions.bind(this);
   }
 
   UpdateValues(){
@@ -227,6 +228,20 @@ class FontVisualizer extends React.Component {
 
   }
 
+  HideOptions(value){
+    console.log('change hide options:', value)
+
+    document.querySelectorAll('.container-options').forEach(function(options) {
+      if(value){
+        options.classList.remove('hide-options')
+      }else{
+        options.classList.add('hide-options')
+      }  
+    });
+  }
+
+
+
   componentDidMount(){
     this.UpdateValues()
   }
@@ -240,7 +255,7 @@ class FontVisualizer extends React.Component {
     let dsp_bottom = 'bottom_'+this.state.current_bottom
     return (
       <main>
-        <Banner handleChangeDisplay={this.ChangeDisplay} />
+        <Banner handleChangeDisplay={this.ChangeDisplay} handleHideOptions={this.HideOptions} />
         <div id='container-top'>
           <Options id='form-options-top'
                 display='top'

@@ -1,10 +1,18 @@
+import React, { useState } from 'react';
 import DisplayOption from './Options/DisplayOptions'
 
 const Banner = (props) => {
+  const [hideOptions, setOptions] = useState(false);
+
+  const handleClick = () => {
+    setOptions(!hideOptions);
+    props.handleHideOptions(hideOptions)
+  }
+
   return(
     <nav>
       <a> Choose Your Style </a>
-      <a>VISUALIZE OPTION</a>
+      <button id="btn-visualizer" onClick={handleClick} className={hideOptions ? "vis_active" : "vis_inactive"}>Visualize</button>
       <DisplayOption handleChangeDisplay={props.handleChangeDisplay} />
     </nav>
   )
