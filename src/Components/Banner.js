@@ -6,13 +6,13 @@ const Banner = (props) => {
 
   const handleClick = () => {
     setOptions(!hideOptions);
-    props.handleHideOptions(hideOptions)
+    props.handleHideOptions(!hideOptions)
   }
 
   return(
     <nav>
       <a> Choose Your Style </a>
-      <button id="btn-visualizer" onClick={handleClick} className={hideOptions ? "vis_active" : "vis_inactive"}>Visualize</button>
+      <button id="btn-visualizer" onClick={handleClick} className={hideOptions ? "vis_active" : "vis_inactive"}>Full Page</button>
       <DisplayOption handleChangeDisplay={props.handleChangeDisplay} />
     </nav>
   )

@@ -1,44 +1,59 @@
 const fonts = [
-    'Arial', 
-    'Verdana', 
-    'Tahoma', 
-    'Trebuchet MS', 
-    'Times New Roman', 
-    'Georgia', 
-    'Garamond', 
-    'Courier New', 
-    'Brush Script MT', 
-    'Sofia',
-    'Roboto',
-    // Roboto Slab
-    // Merriweather
-    // Playfair Display
-    // Lora 
-    // PT Serif
-    
-    // Open Sans
-    // Lato
-    // Montserrat
-    // Poppins
-    // Bebas Neue
-    // Lobster
-    // Comfortaa
-    // Abril Fatface
-    // Alfa Slab One
-
-    // Dancing Script
-    // Pacifico
-    // Shadows Into Light
-    // Indie Flower
-    // Caveat
-
-    // Roboto Mono
-    // Inconsolata
-    // Source Code Pro
-    // IBM Plex Mono
-    // Space Mono
-
-
+  'Abril Fatface',
+  'Alfa Slab One',
+  'Arial Black',
+  'Arial',
+  'Bebas Neue',
+  'Brush Script MT',
+  'Cabin',
+  'Caveat',
+  'Climate Crisis',
+  'Comfortaa',
+  'Comic Sans MS',
+  'Courier New',
+  'Dancing Script',
+  'Dosis',
+  'Fira Sans',
+  'Garamond',
+  'Georgia',
+  'IBM Plex Mono',
+  'Impact',
+  'Inconsolata',
+  'Indie Flower',
+  'Josefin Sans',
+  'Karla',
+  'Lato',
+  'Lobster',
+  'Lora',
+  'Lucida Console',
+  'Lucida Sans Unicode',
+  'Merriweather',
+  'Montserrat',
+  'Muli',
+  'Noto Sans',
+  'Open Sans',
+  'Oswald',
+  'Pacifico',
+  'Palatino Linotype',
+  'Playfair Display',
+  'Poppins',
+  'PT Sans',
+  'PT Serif',
+  'Quicksand',
+  'Raleway',
+  'Roboto',
+  'Shadows Into Light',
+  'Sofia',
+  'Source Code Pro',
+  'Source Sans Pro',
+  'Space Mono',
+  'Tahoma',
+  'Times New Roman',
+  'Titillium Web',
+  'Trebuchet MS',
+  'Ubuntu',
+  'Verdana',
+  'Work Sans',
 ]
 
 export default fonts;

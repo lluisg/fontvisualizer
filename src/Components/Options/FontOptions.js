@@ -4,7 +4,7 @@ import fonts from '../data/fonts'
 const FontOption = (props) => {
   let fontsC = []
   fonts.map(font => {
-    let font_clean = font.replaceAll(/\s/g,'')
+    const font_clean = font.replace(/\s/g, '');
     fontsC.push(font_clean)
   })
   
@@ -16,7 +16,7 @@ const FontOption = (props) => {
           {
             fonts.map((font, index) => {
               let font_clean = fontsC[index]
-              return (<option key={font_clean} style={{fontFamily: font}} id={font_clean} value={font}>{font}</option>)
+              return (<option key={font_clean} id={font_clean} value={font}>{font}</option>)
             })
           }
         </Form.Select>

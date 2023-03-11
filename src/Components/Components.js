@@ -8,12 +8,17 @@ import Banner from "./Banner"
 import Options from "./Options"
 import Displayer from "./Displayer"
 
+import fonts from './data/fonts'
+
+
 class FontVisualizer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       title: 'This content is editable',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor suscipit porta. Nulla consectetur vulputate justo, ac accumsan elit placerat vel. Nulla varius vel arcu sit amet suscipit. In nisl ex, posuere vel interdum sed, maximus a est. Vivamus malesuada semper leo, sed hendrerit turpis dignissim sit amet. Cras odio lacus, vehicula et nisl et, efficitur luctus nisl. Vivamus rhoncus congue odio, quis aliquet metus cursus eget. Vivamus a arcu sed mi euismod accumsan in quis lacus. Proin egestas tempus elit, id aliquet ante imperdiet at. Donec pellentesque vestibulum fermentum. Fusce vestibulum tempor orci et dapibus.',
+      num_displays: '1',
+      no_options: false,
       
       current_top: 'title',
       current_bottom: 'title',
@@ -173,18 +178,30 @@ class FontVisualizer extends React.Component {
 
   }
 
+  hideCopyOptions(value){
+    let btncopy = document.getElementById('container-copy')
+    if(value){
+      btncopy.classList.add('hide-display')
+    }else{
+      btncopy.classList.remove('hide-display')
+    }
+  }
+
   ChangeDisplay(value){
     console.log('change display:', value)
 
     let display2 = document.getElementById('container-bottom')
-    let btncopy = document.getElementById('container-copy')
     if(value == '1'){
       display2.classList.add('hide-display')
-      btncopy.classList.add('hide-display')
     }else{
       display2.classList.remove('hide-display')
-      btncopy.classList.remove('hide-display')
     }
+
+    this.hideCopyOptions(value=='1'||this.state.no_options ? true : false)
+
+    this.setState({
+      num_displays: value
+    })
   }
 
   ChangeParameterText(display, name, value){
@@ -233,16 +250,61 @@ class FontVisualizer extends React.Component {
 
     document.querySelectorAll('.container-options').forEach(function(options) {
       if(value){
-        options.classList.remove('hide-options')
-      }else{
         options.classList.add('hide-options')
+      }else{
+        options.classList.remove('hide-options')
       }  
+    });
+
+    document.querySelectorAll('.previewer').forEach(function(options) {
+      if(value){
+        options.classList.add('only-previewer')
+      }else{
+        options.classList.remove('only-previewer')
+      }  
+    });
+
+    if(this.state.num_displays == '2'){
+      this.hideCopyOptions(value)
+    }else{
+      this.hideCopyOptions(true)
+    }
+
+    this.setState({
+      no_options: value
     });
   }
 
-
+  UpdateFonts(){
+    fonts.map((font, index) => {
+      const font_clean = font.replace(/\s/g, '');
+      let font_el = document.getElementById(font_clean)
+      if(font_el){
+        font_el.style.fontFamily = `"${font}", sans-serif, serif`
+      }else{
+        console.log('could not get font', font_clean)
+      }
+    })
+  }
 
   componentDidMount(){
+    // Add all the fonts you need
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+
+    const joinedList = fonts.join('|'); // join with '|'
+    const replacedList = joinedList.replace(/\s+/g, '+'); // replace whitespace with '+'
+    const href_value = 'https://fonts.googleapis.com/css?family=' + replacedList
+    link.href = href_value;
+
+    document.head.appendChild(link);
+
+    link.onload = () => {
+      // Change fonts
+      this.UpdateFonts();
+    };
+
+    // Update values
     this.UpdateValues()
   }
 
@@ -274,7 +336,11 @@ class FontVisualizer extends React.Component {
                 border={this.state[dsp_top].border}
                 centered={this.state[dsp_top].centered}
                 />
-          <Displayer title={this.state.title} text={this.state.text} display='top' handleChangeText={this.ChangeText} />
+          <Displayer  title={this.state.title} 
+                      text={this.state.text} 
+                      display='top' 
+                      num_displays = {this.state.num_displays}
+                      handleChangeText={this.ChangeText} />
         </div>
         <div id='container-copy' className='hide-display'>
           <div className='btn-copy' onClick={this.CopyParameters}>Copy Format <FontAwesomeIcon icon={faArrowDown} /></div>
@@ -297,7 +363,11 @@ class FontVisualizer extends React.Component {
                         border={this.state[dsp_bottom].border}
                         centered={this.state[dsp_bottom].centered}
                         />
-          <Displayer title={this.state.title} text={this.state.text} display='bottom' handleChangeText={this.ChangeText} />
+          <Displayer  title={this.state.title} 
+                      text={this.state.text} 
+                      display='bottom' 
+                      num_displays = {this.state.num_displays}
+                      handleChangeText={this.ChangeText} />
         </div>
       </main>
     );

@@ -7,7 +7,7 @@ const Displayer = (props) => {
 
   return (
     <div className="container-previewer">
-      <div id={"previewer-"+props.display} className='previewer'>
+      <div id={"previewer-"+props.display} className='previewer' data-num-display={props.num_displays}>
         <div id={"previewer2-"+props.display}>
           <ContentEditable  id={"previewer-title-"+props.display} 
                             className='previewer-title' 
