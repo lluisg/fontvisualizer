@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import sanitizeHtml from "sanitize-html"
+import WebFont from 'webfontloader';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -289,22 +290,34 @@ class FontVisualizer extends React.Component {
 
   componentDidMount(){
     // Add all the fonts you need
-    const link = document.createElement('link');
-    // link.rel = 'stylesheet';
-    link.type="text/css"
 
-    const joinedList = fonts.join('|'); // join with '|'
-    const replacedList = joinedList.replace(/\s+/g, '+'); // replace whitespace with '+'
-    const href_value = 'https://fonts.googleapis.com/css?family=' + replacedList
-    console.log('https://fonts.googleapis.com/css?family=' + replacedList)
-    link.href = href_value;
+    WebFont.load({
+      google: {
+        // families: ['Abril Fatface', 'Alfa Slab One']
+        families: fonts
+      }
+    });
 
-    document.head.appendChild(link);
+    // Change fonts
+    this.UpdateFonts();
 
-    link.onload = () => {
-      // Change fonts
-      this.UpdateFonts();
-    };
+
+    // const link = document.createElement('link');
+    // // link.rel = 'stylesheet';
+    // link.type="text/css"
+
+    // const joinedList = fonts.join('|'); // join with '|'
+    // const replacedList = joinedList.replace(/\s+/g, '+'); // replace whitespace with '+'
+    // const href_value = 'https://fonts.googleapis.com/css?family=' + replacedList
+    // console.log('https://fonts.googleapis.com/css?family=' + replacedList)
+    // link.href = href_value;
+
+    // document.head.appendChild(link);
+
+    // link.onload = () => {
+    //   // Change fonts
+    //   this.UpdateFonts();
+    // };
 
     // Update values
     this.UpdateValues()
