@@ -293,8 +293,8 @@ class FontVisualizer extends React.Component {
 
     WebFont.load({
       google: {
-        // families: ['Abril Fatface', 'Alfa Slab One']
-        families: fonts
+        families: ['Abril Fatface', 'Alfa Slab One']
+        // families: fonts
       }
     });
 
