@@ -8,6 +8,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Alfa+Slab+One|Arial+Black|Arial|Bebas+Neue|Brush+Script+MT|Cabin|Caveat|Climate+Crisis|Comfortaa|Comic+Sans+MS|Courier+New|Dancing+Script|Dosis|Fira+Sans|Garamond|Georgia|IBM+Plex+Mono|Impact|Inconsolata|Indie+Flower|Josefin+Sans|Karla|Lato|Lobster|Lora|Lucida+Console|Lucida+Sans+Unicode|Merriweather|Montserrat|Muli|Noto+Sans|Open+Sans|Oswald|Pacifico|Palatino+Linotype|Playfair+Display|Poppins|PT+Sans|PT+Serif|Quicksand|Raleway|Roboto|Shadows+Into+Light|Sofia|Source+Code+Pro|Source+Sans+Pro|Space+Mono|Tahoma|Times+New+Roman|Titillium+Web|Trebuchet+MS|Ubuntu|Verdana|Work+Sans");
 
 *, *::after, *::before {
   box-sizing: border-box;

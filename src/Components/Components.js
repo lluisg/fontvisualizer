@@ -295,6 +295,7 @@ class FontVisualizer extends React.Component {
     const joinedList = fonts.join('|'); // join with '|'
     const replacedList = joinedList.replace(/\s+/g, '+'); // replace whitespace with '+'
     const href_value = 'https://fonts.googleapis.com/css?family=' + replacedList
+    console.log('https://fonts.googleapis.com/css?family=' + replacedList)
     link.href = href_value;
 
     document.head.appendChild(link);
