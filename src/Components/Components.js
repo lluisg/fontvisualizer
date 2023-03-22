@@ -290,7 +290,8 @@ class FontVisualizer extends React.Component {
   componentDidMount(){
     // Add all the fonts you need
     const link = document.createElement('link');
-    link.rel = 'stylesheet';
+    // link.rel = 'stylesheet';
+    link.type="text/css"
 
     const joinedList = fonts.join('|'); // join with '|'
     const replacedList = joinedList.replace(/\s+/g, '+'); // replace whitespace with '+'
