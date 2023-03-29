@@ -9,8 +9,8 @@ import Banner from "./Banner"
 import Options from "./Options"
 import Displayer from "./Displayer"
 
-import fonts from './data/fonts'
-
+const fonts = ['Abril Fatface', 'Alfa Slab One', 'Arial Black', 'Arial', 'Bebas Neue', 'Brush Script MT', 'Cabin', 'Caveat', 'Climate Crisis', 'Comfortaa', 'Comic Sans MS', 'Courier New', 'Dancing Script', 'Dosis', 'Fira Sans', 'Garamond', 'Georgia', 'IBM Plex Mono', 'Impact', 'Inconsolata', 'Indie Flower', 'Josefin Sans', 'Karla', 'Lato', 'Lobster', 'Lora', 'Lucida Console', 'Lucida Sans Unicode', 'Merriweather', 'Montserrat', 'Muli', 'Noto Sans', 'Open Sans', 'Oswald', 'Pacifico', 'Palatino Linotype', 'Playfair Display', 'Poppins', 'PT Sans', 'PT Serif', 'Quicksand', 'Raleway', 'Roboto', 'Shadows Into Light', 'Sofia', 'Source Code Pro', 'Source Sans Pro', 'Space Mono', 'Tahoma', 'Times New Roman', 'Titillium Web', 'Trebuchet MS', 'Ubuntu', 'Verdana', 'Work Sans']
+const fonts_google = ['Abril Fatface', 'Alfa Slab One', 'Bebas Neue', 'Cabin', 'Caveat', 'Climate Crisis', 'Comfortaa', 'Dancing Script', 'Dosis', 'Fira Sans', 'Indie Flower', 'Josefin Sans', 'Karla', 'Lato', 'Lobster', 'Lora', 'Merriweather', 'Montserrat', 'Muli', 'Noto Sans', 'Open Sans', 'Oswald', 'Pacifico', 'Playfair Display', 'Poppins', 'PT Sans', 'PT Serif', 'Quicksand', 'Raleway', 'Roboto', 'Shadows Into Light', 'Sofia', 'Space Mono', 'Tahoma', 'Titillium Web', 'Ubuntu', 'Verdana']
 
 class FontVisualizer extends React.Component {
   constructor(props) {
@@ -292,7 +292,7 @@ class FontVisualizer extends React.Component {
     // Change fonts
     WebFont.load({
       google: {
-        families: ['Abril Fatface', 'Alfa Slab One', 'Bebas Neue', 'Cabin', 'Caveat', 'Climate Crisis', 'Comfortaa', 'Dancing Script', 'Dosis', 'Fira Sans', 'Indie Flower', 'Josefin Sans', 'Karla', 'Lato', 'Lobster', 'Lora', 'Merriweather', 'Montserrat', 'Muli', 'Noto Sans', 'Open Sans', 'Oswald', 'Pacifico', 'Playfair Display', 'Poppins', 'PT Sans', 'PT Serif', 'Quicksand', 'Raleway', 'Roboto', 'Shadows Into Light', 'Sofia', 'Space Mono', 'Tahoma', 'Titillium Web', 'Ubuntu', 'Verdana',]
+        families: fonts_google
       }
     });
     console.log('fonts loaded')
@@ -335,6 +335,7 @@ class FontVisualizer extends React.Component {
                 uppercase={this.state[dsp_top].uppercase}
                 border={this.state[dsp_top].border}
                 centered={this.state[dsp_top].centered}
+                fonts={fonts}
                 />
           <Displayer  title={this.state.title} 
                       text={this.state.text} 
@@ -362,6 +363,7 @@ class FontVisualizer extends React.Component {
                         uppercase={this.state[dsp_bottom].uppercase}
                         border={this.state[dsp_bottom].border}
                         centered={this.state[dsp_bottom].centered}
+                        fonts={fonts}
                         />
           <Displayer  title={this.state.title} 
                       text={this.state.text} 

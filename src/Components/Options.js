@@ -12,7 +12,7 @@ const Options = (props) => {
         <TextOption display={props.display} handleChangeCurrent={props.handleChangeCurrent} />
       </div>
       <div className='row-options'>
-        <FontOption display={props.display} handleChange={props.handleChange} font={props.font} />
+        <FontOption display={props.display} handleChange={props.handleChange} font={props.font} fonts={props.fonts}/>
         <SizeOption display={props.display} handleChange={props.handleChange} size={props.size} />
       </div>
       <div className='row-options'>
