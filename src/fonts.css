@@ -1,277 +1,251 @@
 /* Code by Lluis Guardia */
 
-/* Abril Fatface */
-@font-face {
+/* @font-face {
   font-family: 'Abril Fatface';
-  src: url('Fonts/Abril_Fatface/AbrilFatface-Regular.ttf') format('truetype');
+  src: url('./Fonts/Abril_Fatface/AbrilFatface-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-/* Alfa Slab One */
 @font-face {
   font-family: 'Alfa Slab One';
-  src: url('Fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf') format('truetype');
+  src: url('./Fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-/* Bebas Neue */
 @font-face {
   font-family: 'Bebas Neue';
-  src: url('Fonts/Bebas_Neue/BebasNeue-Regular.ttf') format('truetype');
+  src: url('./Fonts/Bebas_Neue/BebasNeue-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-/* Cabin */
 @font-face {
   font-family: 'Cabin';
-  src: url('Fonts/Cabin/static/Cabin/Cabin-Regular.ttf') format('truetype');
+  src: url('./Fonts/Cabin/static/Cabin/Cabin-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-/* Caveat */
 @font-face {
   font-family: 'Caveat';
-  src: url('https://fonts.gstatic.com/s/caveat/v13/Wnz6HAc5bAfYB2QLYTwZ.ttf') format('truetype');
+  src: url('./Fonts/Caveat/static/Caveat-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-/* Climate Crisis */
 @font-face {
   font-family: 'Climate Crisis';
-  src: url('https://fonts.gstatic.com/s/climatecrisis/v4/pxiLypAzNmWxjpFNLVsyGjA3q5qAtw.ttf') format('truetype');
+  src: url('./Fonts/Climate_Crisis/static/ClimateCrisis-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-/* Comfortaa */
 @font-face {
   font-family: 'Comfortaa';
-  src: url('https://fonts.gstatic.com/s/comfortaa/v29/1Ptsg8LJRfWJmhDAuUsSQI8GTw.ttf') format('truetype');
+  src: url('./Fonts/Comfortaa/static/Comfortaa-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-/* Dancing Script */
 @font-face {
   font-family: 'Dancing Script';
-  src: url('https://fonts.gstatic.com/s/dancingscript/v14/If2RXTr6YS-zF4S-kcSWSViSwvCwR3FhWktlBtiK.ttf') format('truetype');
+  src: url('./Fonts/Dancing_Script/static/DancingScript-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-/* Dosis */
 @font-face {
   font-family: 'Dosis';
-  src: url('https://fonts.gstatic.com/s/dosis/v21/HhyXU5sn9vOmLzGnKtCC.ttf') format('truetype');
+  src: url('./Fonts/Dosis/static/Dosis-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Fira Sans';
-  src: url('https://fonts.gstatic.com/s/firasans/v16/va9C4kDNxMZdWfMOD5VvkrVEGf7wJA.woff2') format('woff2');
+  src: url('./Fonts/Fira_Sans/FiraSans-Medium.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'IBM Plex Mono';
-  src: url('https://fonts.gstatic.com/s/ibmplexmono/v9/-F6pfjptAgt5VM-kVkqdyU8n3kwq0g.woff2') format('woff2');
+  src: url('./Fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Inconsolata';
-  src: url('https://fonts.gstatic.com/s/inconsolata/v20/QldKNThLqRwH-OJ1UHjlKFle.ttf') format('truetype');
+  src: url('./Fonts/Inconsolata/static/Inconsolata/Inconsolata-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Indie Flower';
-  src: url('https://fonts.gstatic.com/s/indieflower/v12/m8JVjfNVeKWVnh3QMuKkFcZVaUuH.ttf') format('truetype');
+  src: url('./Fonts/Indie_Flower/IndieFlower-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Josefin Sans';
-  src: url('https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhLw.woff2') format('woff2');
+  src: url('./Fonts/Josefin_Sans/static/JosefinSans-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Karla';
-  src: url('https://fonts.gstatic.com/s/karla/v15/qkBWXvsO6sreR8E-bKxIbMwA.ttf') format('truetype');
+  src: url('./Fonts/Karla/static/Karla-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Lato';
-  src: url('https://fonts.gstatic.com/s/lato/v21/S6uyw4BMUTPHjx4wWw.ttf') format('truetype');
+  src: url('./Fonts/Lato/Lato-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Lobster';
-  src: url('https://fonts.gstatic.com/s/lobster/v27/vW8LTQaFXgGuDAIpF14.ttf') format('truetype');
+  src: url('./Fonts/Lobster/Lobster-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Lora';
-  src: url('https://fonts.gstatic.com/s/lora/v21/0QIvMX1D_JOuAw0.ttf') format('truetype');
+  src: url('./Fonts/Lora/static/Lora-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Merriweather';
-  src: url('https://fonts.gstatic.com/s/merriweather/v28/u-440qyriQwlOrhSvowK_l5-eR5_M9wP.ttf') format('truetype');
+  src: url('./Fonts/Merriweather/Merriweather-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-/* Montserrat */
 @font-face {
   font-family: 'Montserrat';
-  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+  src: url('./Fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Muli */
 @font-face {
-  font-family: 'Muli';
-  src: url('https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700&display=swap');
+  font-family: 'Mulish';
+  src: url('./Fonts/Mulish/static/Mulish-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Noto Sans */
 @font-face {
   font-family: 'Noto Sans';
-  src: url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+  src: url('./Fonts/Noto_Sans/NotoSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Open Sans */
 @font-face {
   font-family: 'Open Sans';
-  src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+  src: url('./Fonts/Open_Sans/static/OpenSans/OpenSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Oswald */
 @font-face {
   font-family: 'Oswald';
-  src: url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap');
+  src: url('./Fonts/Oswald/static/Oswald-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Pacifico */
 @font-face {
   font-family: 'Pacifico';
-  src: url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+  src: url('./Fonts/Pacifico/Pacifico-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Playfair Display */
 @font-face {
   font-family: 'Playfair Display';
-  src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
+  src: url('./Fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Poppins */
 @font-face {
   font-family: 'Poppins';
-  src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+  src: url('./Fonts/Poppins/Poppins-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* PT Sans */
 @font-face {
   font-family: 'PT Sans';
-  src: url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+  src: url('./Fonts/PT_Sans/PTSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* PT Serif */
 @font-face {
   font-family: 'PT Serif';
-  src: url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+  src: url('./Fonts/PT_Serif/PTSerif-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Quicksand */
 @font-face {
   font-family: 'Quicksand';
-  src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+  src: url('./Fonts/Quicksand/static/Quicksand-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Raleway */
 @font-face {
   font-family: 'Raleway';
-  src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+  src: url('./Fonts/Raleway/static/Raleway-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  src: url('./Fonts/Roboto/Roboto-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Shadows Into Light';
-  src: url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+  src: url('./Fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Sofia';
-  src: url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+  src: url('./Fonts/Sofia/Sofia-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Space Mono';
-  src: url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+  src: url('./Fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Titillium Web';
-  src: url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
-}
-
-@font-face {
-  font-family: 'Trebuchet MS';
-  src: url('https://fonts.googleapis.com/css2?family=Trebuchet+MS&display=swap');
+  src: url('./Fonts/Titillium_Web/TitilliumWeb-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Ubuntu';
-  src: url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-}
+  src: url('./Fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+} */
 
 
 
@@ -400,8 +374,8 @@
   font-family: "Montserrat", sans-serif, serif;
 }
 
-.muli{
-  font-family: "Muli", sans-serif, serif;
+.mulish{
+  font-family: "Mulish", sans-serif, serif;
 }
 
 .notosans{

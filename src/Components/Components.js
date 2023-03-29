@@ -276,40 +276,7 @@ class FontVisualizer extends React.Component {
     });
   }
 
-  UpdateFonts(){
-    fonts.map((font, index) => {
-      const font_clean = font.replace(/\s/g, '');
-      let font_el = document.getElementById(font_clean)
-      if(font_el){
-        font_el.style.fontFamily = '"'+font+'", sans-serif, serif';
-      }else{
-        console.log('could not get font', font_clean)
-      }
-    })
-  }
-
-  loadFonts(fonts_list){
-    // Change fonts
-    WebFont.load({
-      google: {
-        families: fonts_list
-      }
-    });
-    // console.log('fonts loaded')
-  }
-
-  async componentDidMount(){
-    // Add all the fonts you need
-    // console.log(fonts_google)
-    // for (let i = 0; i < fonts_google.length; i++) {
-    //   console.log(fonts_google[i])
-    //   this.loadFonts([fonts_google[i]]);
-    // }
-    // // const result = await this.loadFonts(fonts_google)
-    // this.UpdateFonts();
-    // console.log('updated fonts')
-
-    // Update values
+  componentDidMount(){
     this.UpdateValues()
   }
 
