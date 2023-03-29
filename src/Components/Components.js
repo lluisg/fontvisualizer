@@ -292,7 +292,7 @@ class FontVisualizer extends React.Component {
     // Change fonts
     WebFont.load({
       google: {
-        families: ['Abril Fatface', 'Alfa Slab One', 'Bebas Neue', 'Cabin', 'Caveat', 'Climate Crisis', 'Comfortaa', 'Dancing Script', 'Dosis', 'Fira Sans', 'IBM Plex Mono', 'Inconsolata', 'Indie Flower', 'Josefin Sans', 'Karla', 'Lato', 'Lobster', 'Lora', 'Merriweather', 'Montserrat', 'Muli', 'Noto Sans', 'Open Sans', 'Oswald', 'Pacifico', 'Playfair Display', 'Poppins', 'PT Sans', 'PT Serif', 'Quicksand', 'Raleway', 'Roboto', 'Shadows Into Light', 'Sofia', 'Space Mono', 'Tahoma', 'Titillium Web', 'Trebuchet MS', 'Ubuntu', 'Verdana',]
+        families: ['Abril Fatface', 'Alfa Slab One', 'Bebas Neue', 'Cabin', 'Caveat', 'Climate Crisis', 'Comfortaa', 'Dancing Script', 'Dosis', 'Fira Sans', 'Indie Flower', 'Josefin Sans', 'Karla', 'Lato', 'Lobster', 'Lora', 'Merriweather', 'Montserrat', 'Muli', 'Noto Sans', 'Open Sans', 'Oswald', 'Pacifico', 'Playfair Display', 'Poppins', 'PT Sans', 'PT Serif', 'Quicksand', 'Raleway', 'Roboto', 'Shadows Into Light', 'Sofia', 'Space Mono', 'Tahoma', 'Titillium Web', 'Ubuntu', 'Verdana',]
       }
     });
     console.log('fonts loaded')
