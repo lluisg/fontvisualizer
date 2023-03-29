@@ -16,7 +16,9 @@ const FontOption = (props) => {
           {
             props.fonts.map((font, index) => {
               let font_clean = fontsC[index]
-              return (<option key={font_clean} id={font_clean} value={font}>{font}</option>)
+              let fontc = font_clean.toLowerCase()
+              console.log(fontc)
+              return (<option key={font_clean} id={font_clean} value={font} className={fontc}>{font}</option>)
             })
           }
         </Form.Select>
