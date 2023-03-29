@@ -10,7 +10,6 @@ import Options from "./Options"
 import Displayer from "./Displayer"
 
 const fonts = ['Abril Fatface', 'Alfa Slab One', 'Arial Black', 'Arial', 'Bebas Neue', 'Brush Script MT', 'Cabin', 'Caveat', 'Climate Crisis', 'Comfortaa', 'Comic Sans MS', 'Courier New', 'Dancing Script', 'Dosis', 'Fira Sans', 'Garamond', 'Georgia', 'IBM Plex Mono', 'Impact', 'Inconsolata', 'Indie Flower', 'Josefin Sans', 'Karla', 'Lato', 'Lobster', 'Lora', 'Lucida Console', 'Lucida Sans Unicode', 'Merriweather', 'Montserrat', 'Muli', 'Noto Sans', 'Open Sans', 'Oswald', 'Pacifico', 'Palatino Linotype', 'Playfair Display', 'Poppins', 'PT Sans', 'PT Serif', 'Quicksand', 'Raleway', 'Roboto', 'Shadows Into Light', 'Sofia', 'Source Code Pro', 'Source Sans Pro', 'Space Mono', 'Tahoma', 'Times New Roman', 'Titillium Web', 'Trebuchet MS', 'Ubuntu', 'Verdana', 'Work Sans']
-const fonts_google = ['Abril Fatface', 'Alfa Slab One', 'Bebas Neue', 'Cabin', 'Caveat', 'Climate Crisis', 'Comfortaa', 'Dancing Script', 'Dosis', 'Fira Sans', 'Indie Flower', 'Josefin Sans', 'Karla', 'Lato', 'Lobster', 'Lora', 'Merriweather', 'Montserrat', 'Muli', 'Noto Sans', 'Open Sans', 'Oswald', 'Pacifico', 'Playfair Display', 'Poppins', 'PT Sans', 'PT Serif', 'Quicksand', 'Raleway', 'Roboto', 'Shadows Into Light', 'Sofia', 'Space Mono', 'Tahoma', 'Titillium Web', 'Ubuntu', 'Verdana']
 
 class FontVisualizer extends React.Component {
   constructor(props) {
@@ -106,7 +105,7 @@ class FontVisualizer extends React.Component {
           ? text.innerHTML = this.state[line].toUpperCase()
           : text.innerHTML = this.state[line]
     
-        text.style.fontFamily = '"'+this.state[disp_val].font+'", sans-serif, serif';
+        text.style.fontFamily = "'"+this.state[disp_val].font+"', sans-serif, serif";
         text.style.fontSize = this.state[disp_val].size + 'px';
     
         this.state[disp_val].underline 

@@ -1,466 +1,214 @@
 /* Code by Lluis Guardia */
 
-/* @font-face {
-  font-family: 'Abril Fatface';
-  src: url('./Fonts/Abril_Fatface/AbrilFatface-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Alfa Slab One';
-  src: url('./Fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Bebas Neue';
-  src: url('./Fonts/Bebas_Neue/BebasNeue-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Cabin';
-  src: url('./Fonts/Cabin/static/Cabin/Cabin-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Caveat';
-  src: url('./Fonts/Caveat/static/Caveat-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Climate Crisis';
-  src: url('./Fonts/Climate_Crisis/static/ClimateCrisis-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Comfortaa';
-  src: url('./Fonts/Comfortaa/static/Comfortaa-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Dancing Script';
-  src: url('./Fonts/Dancing_Script/static/DancingScript-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Dosis';
-  src: url('./Fonts/Dosis/static/Dosis-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Fira Sans';
-  src: url('./Fonts/Fira_Sans/FiraSans-Medium.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'IBM Plex Mono';
-  src: url('./Fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Inconsolata';
-  src: url('./Fonts/Inconsolata/static/Inconsolata/Inconsolata-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Indie Flower';
-  src: url('./Fonts/Indie_Flower/IndieFlower-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Josefin Sans';
-  src: url('./Fonts/Josefin_Sans/static/JosefinSans-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Karla';
-  src: url('./Fonts/Karla/static/Karla-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('./Fonts/Lato/Lato-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Lobster';
-  src: url('./Fonts/Lobster/Lobster-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Lora';
-  src: url('./Fonts/Lora/static/Lora-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  src: url('./Fonts/Merriweather/Merriweather-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('./Fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Mulish';
-  src: url('./Fonts/Mulish/static/Mulish-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url('./Fonts/Noto_Sans/NotoSans-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url('./Fonts/Open_Sans/static/OpenSans/OpenSans-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Oswald';
-  src: url('./Fonts/Oswald/static/Oswald-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Pacifico';
-  src: url('./Fonts/Pacifico/Pacifico-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Playfair Display';
-  src: url('./Fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('./Fonts/Poppins/Poppins-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PT Sans';
-  src: url('./Fonts/PT_Sans/PTSans-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PT Serif';
-  src: url('./Fonts/PT_Serif/PTSerif-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Quicksand';
-  src: url('./Fonts/Quicksand/static/Quicksand-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: url('./Fonts/Raleway/static/Raleway-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto';
-  src: url('./Fonts/Roboto/Roboto-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Shadows Into Light';
-  src: url('./Fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Sofia';
-  src: url('./Fonts/Sofia/Sofia-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Space Mono';
-  src: url('./Fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Titillium Web';
-  src: url('./Fonts/Titillium_Web/TitilliumWeb-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Ubuntu';
-  src: url('./Fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
-} */
-
-
-
 /* ------------------------------------- FONTS CLASES ------------------------------------- */
 
 .abrilfatface{
-  /* font-family: "Abril Fatface", sans-serif, serif; */
-  font-family: "Abril Fatface", sans-serif;
-  /* font-family: "Abril Fatface", serif; */
-  /* font-family: "Abril Fatface"; */
+  font-family: 'Abril Fatface', sans-serif;
 }
 
 .alfaslabone{
-  font-family: "Alfa Slab One", sans-serif, serif;
+  font-family: 'Alfa Slab One', sans-serif, serif;
 }
 
 .arialblack{
-  font-family: "Arial Black", sans-serif, serif;
+  font-family: 'Arial Black', sans-serif, serif;
 }
 
 .arial{
-  font-family: "Arial", sans-serif, serif;
+  font-family: 'Arial', sans-serif, serif;
 }
 
 .bebasneue{
-  font-family: "Bebas Neue", sans-serif, serif;
+  font-family: 'Bebas Neue', sans-serif, serif;
 }
 
 .brushscriptmt{
-  font-family: "Brush Script MT", sans-serif, serif;
+  font-family: 'Brush Script MT', sans-serif, serif;
 }
 
 .cabin{
-  font-family: "Cabin", sans-serif, serif;
+  font-family: 'Cabin', sans-serif, serif;
 }
 
 .caveat{
-  font-family: "Caveat", sans-serif, serif;
+  font-family: 'Caveat', sans-serif, serif;
 }
 
 .climatecrisis{
-  font-family: "Climate Crisis", sans-serif, serif;
+  font-family: 'Climate Crisis', sans-serif, serif;
 }
 
 .comfortaa{
-  font-family: "Comfortaa", sans-serif, serif;
+  font-family: 'Comfortaa', sans-serif, serif;
 }
 
 .comicsansms{
-  font-family: "Comic Sans MS", sans-serif, serif;
+  font-family: 'Comic Sans MS', sans-serif, serif;
 }
 
 .couriernew{
-  font-family: "Courier New", sans-serif, serif;
+  font-family: 'Courier New', sans-serif, serif;
 }
 
 .dancingscript{
-  font-family: "Dancing Script", sans-serif, serif;
+  font-family: 'Dancing Script', sans-serif, serif;
 }
 
 .dosis{
-  font-family: "Dosis", sans-serif, serif;
+  font-family: 'Dosis', sans-serif, serif;
 }
 
 .firasans{
-  font-family: "Fira Sans", sans-serif, serif;
+  font-family: 'Fira Sans', sans-serif, serif;
 }
 
 .garamond{
-  font-family: "Garamond", sans-serif, serif;
+  font-family: 'Garamond', sans-serif, serif;
 }
 
 .georgia{
-  font-family: "Georgia", sans-serif, serif;
+  font-family: 'Georgia', sans-serif, serif;
 }
 
 .ibmplexmono{
-  font-family: "IBM Plex Mono", sans-serif, serif;
+  font-family: 'IBM Plex Mono', sans-serif, serif;
 }
 
 .impact{
-  font-family: "Impact", sans-serif, serif;
+  font-family: 'Impact', sans-serif, serif;
 }
 
 .inconsolata{
-  font-family: "Inconsolata", sans-serif, serif;
+  font-family: 'Inconsolata', sans-serif, serif;
 }
 
 .indieflower{
-  font-family: "Indie Flower", sans-serif, serif;
+  font-family: 'Indie Flower', sans-serif, serif;
 }
 
 .josefinsans{
-  font-family: "Josefin Sans", sans-serif, serif;
+  font-family: 'Josefin Sans', sans-serif, serif;
 }
 
 .karla{
-  font-family: "Karla", sans-serif, serif;
+  font-family: 'Karla', sans-serif, serif;
 }
 
 .lato{
-  font-family: "Lato", sans-serif, serif;
+  font-family: 'Lato', sans-serif, serif;
 }
 
 .lobster{
-  font-family: "Lobster", sans-serif, serif;
+  font-family: 'Lobster', sans-serif, serif;
 }
 
 .lora{
-  font-family: "Lora", sans-serif, serif;
+  font-family: 'Lora', sans-serif, serif;
 }
 
 .lucidaconsole{
-  font-family: "Lucida Console", sans-serif, serif;
+  font-family: 'Lucida Console', sans-serif, serif;
 }
 
 .lucidasansunicode{
-  font-family: "Lucida Sans Unicode", sans-serif, serif;
+  font-family: 'Lucida Sans Unicode', sans-serif, serif;
 }
 
 .merriweather{
-  font-family: "Merriweather", sans-serif, serif;
+  font-family: 'Merriweather', sans-serif, serif;
 }
 
 .montserrat{
-  font-family: "Montserrat", sans-serif, serif;
+  font-family: 'Montserrat', sans-serif, serif;
 }
 
 .mulish{
-  font-family: "Mulish", sans-serif, serif;
+  font-family: 'Mulish', sans-serif, serif;
 }
 
 .notosans{
-  font-family: "Noto Sans", sans-serif, serif;
+  font-family: 'Noto Sans', sans-serif, serif;
 }
 
 .opensans{
-  font-family: "Open Sans", sans-serif, serif;
+  font-family: 'Open Sans', sans-serif, serif;
 }
 
 .oswald{
-  font-family: "Oswald", sans-serif, serif;
+  font-family: 'Oswald', sans-serif, serif;
 }
 .pacifico{
-  font-family: "Pacifico", sans-serif, serif;
+  font-family: 'Pacifico', sans-serif, serif;
 }
 
 .palatinolinotype{
-  font-family: "Palatino Linotype", sans-serif, serif;
+  font-family: 'Palatino Linotype', sans-serif, serif;
 }
 
 .playfairdisplay{
-  font-family: "Playfair Display", sans-serif, serif;
+  font-family: 'Playfair Display', sans-serif, serif;
 }
 
 .poppins{
-  font-family: "Poppins", sans-serif, serif;
+  font-family: 'Poppins', sans-serif, serif;
 }
 
 .ptsans{
-  font-family: "PT Sans", sans-serif, serif;
+  font-family: 'PT Sans', sans-serif, serif;
 }
 
 .ptserif{
-  font-family: "PT Serif", sans-serif, serif;
+  font-family: 'PT Serif', sans-serif, serif;
 }
 
 .quicksand{
-font-family: "Quicksand", sans-serif, serif;
+font-family: 'Quicksand', sans-serif, serif;
 }
 
 .raleway{
-  font-family: "Raleway", sans-serif, serif;
+  font-family: 'Raleway', sans-serif, serif;
 }
 
 .roboto{
-  font-family: "Roboto", sans-serif, serif;
+  font-family: 'Roboto', sans-serif, serif;
 }
 
 .shadowsintolight{
-  font-family: "Shadows Into Light", sans-serif, serif;
+  font-family: 'Shadows Into Light', sans-serif, serif;
 }
 
 .sofia{
-  font-family: "Sofia", sans-serif, serif;
+  font-family: 'Sofia', sans-serif, serif;
 }
 
 .sourcecodepro{
-  font-family: "Source Code Pro", sans-serif, serif;
+  font-family: 'Source Code Pro', sans-serif, serif;
 }
 
 .sourcesanspro{
-  font-family: "Source Sans Pro", sans-serif, serif;
+  font-family: 'Source Sans Pro', sans-serif, serif;
 }
 
 .spacemono{
-  font-family: "Space Mono", sans-serif, serif;
+  font-family: 'Space Mono', sans-serif, serif;
 }
 
 .timesnewroman{
-  font-family: "Times New Roman", sans-serif, serif;
+  font-family: 'Times New Roman', sans-serif, serif;
 }
 
 .titilliumweb{
-  font-family: "Titillium Web", sans-serif, serif;
+  font-family: 'Titillium Web', sans-serif, serif;
 }
 
 .trebuchetms{
-  font-family: "Trebuchet MS", sans-serif, serif;
+  font-family: 'Trebuchet MS', sans-serif, serif;
 }
 
 .ubuntu{
-  font-family: "Ubuntu", sans-serif, serif;
+  font-family: 'Ubuntu', sans-serif, serif;
 }
 
 .worksans{
-  font-family: "Work Sans", sans-serif, serif;
+  font-family: 'Work Sans', sans-serif, serif;
 }
