@@ -281,43 +281,28 @@ class FontVisualizer extends React.Component {
       const font_clean = font.replace(/\s/g, '');
       let font_el = document.getElementById(font_clean)
       if(font_el){
-        font_el.style.fontFamily = `"${font}", sans-serif, serif`
+        font_el.style.fontFamily = '"'+font+'", sans-serif, serif';
       }else{
         console.log('could not get font', font_clean)
       }
     })
   }
 
-  componentDidMount(){
-    // Add all the fonts you need
-
+  loadFonts(){
+    // Change fonts
     WebFont.load({
       google: {
-        families: ['Abril Fatface', 'Alfa Slab One']
-        // families: fonts
+        families: ['Abril Fatface', 'Alfa Slab One', 'Bebas Neue', 'Cabin', 'Caveat', 'Climate Crisis', 'Comfortaa', 'Dancing Script', 'Dosis', 'Fira Sans', 'IBM Plex Mono', 'Inconsolata', 'Indie Flower', 'Josefin Sans', 'Karla', 'Lato', 'Lobster', 'Lora', 'Merriweather', 'Montserrat', 'Muli', 'Noto Sans', 'Open Sans', 'Oswald', 'Pacifico', 'Playfair Display', 'Poppins', 'PT Sans', 'PT Serif', 'Quicksand', 'Raleway', 'Roboto', 'Shadows Into Light', 'Sofia', 'Space Mono', 'Tahoma', 'Titillium Web', 'Trebuchet MS', 'Ubuntu', 'Verdana',]
       }
     });
+    console.log('fonts loaded')
+  }
 
-    // Change fonts
+  async componentDidMount(){
+    // Add all the fonts you need
+    const result = await this.loadFonts()
     this.UpdateFonts();
-
-
-    // const link = document.createElement('link');
-    // // link.rel = 'stylesheet';
-    // link.type="text/css"
-
-    // const joinedList = fonts.join('|'); // join with '|'
-    // const replacedList = joinedList.replace(/\s+/g, '+'); // replace whitespace with '+'
-    // const href_value = 'https://fonts.googleapis.com/css?family=' + replacedList
-    // console.log('https://fonts.googleapis.com/css?family=' + replacedList)
-    // link.href = href_value;
-
-    // document.head.appendChild(link);
-
-    // link.onload = () => {
-    //   // Change fonts
-    //   this.UpdateFonts();
-    // };
+    console.log('updated fonts')
 
     // Update values
     this.UpdateValues()
