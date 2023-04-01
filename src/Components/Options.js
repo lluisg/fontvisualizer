@@ -12,12 +12,14 @@ const Options = (props) => {
         <TextOption display={props.display} handleChangeCurrent={props.handleChangeCurrent} />
       </div>
       <div className='row-options'>
-        <FontOption display={props.display} handleChange={props.handleChange} font={props.font} fonts={props.fonts}/>
-        <SizeOption display={props.display} handleChange={props.handleChange} size={props.size} />
-      </div>
-      <div className='row-options'>
-        <ColorOption display={props.display} color={props.color} handleChange={props.handleChange} />
-        <BackgroundOption display={props.display} color={props.bgcolor} handleChange={props.handleChangeBackground} />
+        <div className='row-suboptions'>
+          <FontOption display={props.display} handleChange={props.handleChange} font={props.font} fonts={props.fonts}/>
+          <ColorOption display={props.display} color={props.color} handleChange={props.handleChange} />
+        </div>
+        <div className='row-suboptions'>
+          <SizeOption display={props.display} handleChange={props.handleChange} size={props.size} />
+          <BackgroundOption display={props.display} color={props.bgcolor} handleChange={props.handleChangeBackground} />
+        </div>
       </div>
       <div className='row-options'>
         <ExtraOption   display={props.display} handleChange={props.handleChange} 

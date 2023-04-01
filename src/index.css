@@ -108,7 +108,7 @@ nav{
 .container-options{
   width: 20%;
   max-width: 200px;
-  min-width: 130px;
+  min-width: 170px;
   margin: 5px;
   background-color: var(--bg-options);
   border: 1px solid black;
@@ -119,6 +119,14 @@ nav{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+}
+
+.row-suboptions{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .row-top{
@@ -127,7 +135,7 @@ nav{
 }
 
 .container-option{
-  width: 50%;
+  width: 80%;
   margin: 5px;
   padding: 5px;
   display: flex;
@@ -152,6 +160,34 @@ nav{
   width: 200px;
   height: 40px;
 }
+
+@media (max-width: 760px){
+  #container-top, #container-bottom{
+    flex-direction:column-reverse;
+  }
+  .container-options{
+    width: 95%;
+    max-width: none;
+    flex-direction: row;
+  }
+  .row-suboptions{
+    flex-direction: row;
+  }
+  #container-text{
+    margin: 0;
+  }
+  .container-option{
+    flex-direction: row;
+  }
+  .btn-color, .btn-font, .btn-size{
+    width: 100%;
+  }
+  .btn-extra{
+    width: 80%;
+    margin-left: 20px;
+  }
+}
+
 
 .btn-display{
   width: 100%;
@@ -246,7 +282,9 @@ nav{
   border: 1px solid black;
   border-radius: 5px;
   text-align: center;
-
+}
+.btn-copy:hover{
+  cursor: pointer;
 }
 
 /* ------------------------ VISUALIZER ------------------------ */
